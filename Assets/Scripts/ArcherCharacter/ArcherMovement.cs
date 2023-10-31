@@ -1,0 +1,60 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ArcherMovement : MonoBehaviour
+{
+    // Start is called before the first frame update
+    
+    //Gathered Unity Elements
+
+    //Private variables for logic which don't need to be seen
+    private float horizontal;
+    private bool isFacing = true;
+    private bool isJumping = false;
+    
+    //Public variables  which should be modifiable at any time
+    public float speed = 40;
+    public float jumpForce = 200;
+
+    [SerializeField] private Rigidbody2D rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    // Update is called once per frame
+
+    private void Update()
+    {
+        
+        horizontal = Input.GetAxisRaw("Horizontal") * speed;
+        
+        Flip();
+
+        //Jump
+       if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("Jumping");
+            rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
+        }
+
+    }
+    void FixedUpdate()
+    {
+        rb.velocity = new Vector2(horizontal * Time.fixedDeltaTime, rb.velocity.y);
+    }
+
+    private void Flip()
+    {
+        //Method for switching directino of Player (Needs to be edited to not flip the background)
+        if (isFacing && horizontal < 0f || !isFacing && horizontal > 0f)
+        {
+            isFacing = !isFacing;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
+        }
+    }
+}
