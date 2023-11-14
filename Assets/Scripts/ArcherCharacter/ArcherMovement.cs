@@ -12,7 +12,8 @@ public class ArcherMovement : MonoBehaviour
     private float horizontal;
     private bool isFacing = true;
     private bool isJumping = false;
-    
+    private Animator animator;
+
     //Public variables  which should be modifiable at any time
     public float speed = 40;
     public float jumpForce = 200;
@@ -25,6 +26,7 @@ public class ArcherMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -40,16 +42,33 @@ public class ArcherMovement : MonoBehaviour
        if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("Jumping");
+            animator.SetBool("jump", true);
             rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
+        }
+        else
+        {
+            animator.SetBool("jump", false);
         }
 
         //Shooting
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Debug.Log("Shooting");
+            animator.SetBool("attack", true);
             ShootArrow();
         }
-
+        else 
+        { 
+            animator.SetBool("attack", false); 
+        }
+        //Walking Animation
+        if (horizontal>0||horizontal<0) {
+            animator.SetBool("walking", true);
+        }
+        else
+        {
+            animator.SetBool("walking", false);
+        }
     }
     void FixedUpdate()
     {

@@ -108,9 +108,9 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: speed
-    m_EventTreshold: 0.1
+  - m_ConditionMode: 1
+    m_ConditionEvent: walking
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 110206170}
   m_Solo: 0
@@ -159,6 +159,12 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: death
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: walking
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -428,7 +434,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 110200000}
-    m_Position: {x: 300, y: 40, z: 0}
+    m_Position: {x: 270, y: 40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110266046}
     m_Position: {x: -210, y: 350, z: 0}
@@ -475,9 +481,9 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 4
-    m_ConditionEvent: speed
-    m_EventTreshold: 0.1
+  - m_ConditionMode: 2
+    m_ConditionEvent: walking
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 110291778}
   m_Solo: 0
