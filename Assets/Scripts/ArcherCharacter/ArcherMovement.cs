@@ -16,6 +16,9 @@ public class ArcherMovement : MonoBehaviour
     //Public variables  which should be modifiable at any time
     public float speed = 40;
     public float jumpForce = 200;
+    public GameObject Arrow;
+    public Transform arrowSpawn;
+    public float arrowSpeed = 500;
 
     [SerializeField] private Rigidbody2D rb;
 
@@ -40,6 +43,13 @@ public class ArcherMovement : MonoBehaviour
             rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
         }
 
+        //Shooting
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Debug.Log("Shooting");
+            ShootArrow();
+        }
+
     }
     void FixedUpdate()
     {
@@ -56,5 +66,12 @@ public class ArcherMovement : MonoBehaviour
             localScale.x *= -1f;
             transform.localScale = localScale;
         }
+    }
+
+    private void ShootArrow()
+    {
+        GameObject arrow = Instantiate(Arrow, arrowSpawn.position, arrowSpawn.rotation);
+        Rigidbody2D arrowRb = arrow.GetComponent<Rigidbody2D>();
+        arrowRb.AddForce(arrowSpawn.right * arrowSpeed * (isFacing ? 1 : -1));
     }
 }
