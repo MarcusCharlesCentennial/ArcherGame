@@ -879,6 +879,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2311755580105339016, guid: b7a626342e930e34a875da54fbc9077c, type: 3}
+      propertyPath: Arrow
+      value: 
+      objectReference: {fileID: 907591818927971771, guid: dc10d2dbdb4c63245986b288951148a5, type: 3}
+    - target: {fileID: 2311755580105339016, guid: b7a626342e930e34a875da54fbc9077c, type: 3}
       propertyPath: speed
       value: 150
       objectReference: {fileID: 0}
@@ -886,6 +890,10 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 800
       objectReference: {fileID: 0}
+    - target: {fileID: 2311755580105339016, guid: b7a626342e930e34a875da54fbc9077c, type: 3}
+      propertyPath: arrowSpawn
+      value: 
+      objectReference: {fileID: 1222082799}
     - target: {fileID: 7471449886987980703, guid: b7a626342e930e34a875da54fbc9077c, type: 3}
       propertyPath: m_Enabled
       value: 0
