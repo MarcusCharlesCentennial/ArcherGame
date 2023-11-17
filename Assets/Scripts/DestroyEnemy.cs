@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DestroyEnemy : MonoBehaviour
 {
+    public AudioSource hitSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,7 @@ public class DestroyEnemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "PlayerAttack")
         {
+            hitSound.Play();
             Destroy(this.gameObject);
         }
     }
