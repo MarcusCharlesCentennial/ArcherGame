@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 
     public CharacterController2D controller;
     public Animator animator;
+    public AudioSource jumpSound;
     float horizontalMove = 0f;
     public float runSpeed = 40f;
     bool jump = false;
@@ -24,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
         {
             jump = true;
             animator.SetBool("jump", true);
+            jumpSound.Play();
         }
 
         animator.SetFloat("speed", Mathf.Abs(horizontalMove));

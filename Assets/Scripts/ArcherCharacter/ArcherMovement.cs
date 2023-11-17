@@ -20,6 +20,8 @@ public class ArcherMovement : MonoBehaviour
     public GameObject Arrow;
     public Transform arrowSpawn;
     public float arrowSpeed = 500;
+    public AudioSource jumpSound;
+    public AudioSource shootSound;
 
     [SerializeField] private Rigidbody2D rb;
 
@@ -42,6 +44,7 @@ public class ArcherMovement : MonoBehaviour
        if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("Jumping");
+            jumpSound.Play();
             animator.SetBool("jump", true);
             rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
         }
@@ -54,6 +57,7 @@ public class ArcherMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Debug.Log("Shooting");
+            shootSound.Play();
             animator.SetBool("attack", true);
             ShootArrow();
         }
