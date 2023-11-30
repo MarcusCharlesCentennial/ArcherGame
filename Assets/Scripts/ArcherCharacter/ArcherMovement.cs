@@ -62,7 +62,6 @@ public class ArcherMovement : MonoBehaviour
             Debug.Log("Shooting");
             shootSound.Play();
             animator.SetBool("attack", true);
-            ShootArrow();
             lastShootTime = Time.time;
         }
         else
@@ -98,6 +97,10 @@ public class ArcherMovement : MonoBehaviour
     }
 
     //SHOOTING METHODS:
+    private void shootDelay()
+    {
+        ShootArrow();
+    }
     private void ShootArrow()
     {
         GameObject arrow = Instantiate(Arrow, arrowSpawn.position, arrowSpawn.rotation);
