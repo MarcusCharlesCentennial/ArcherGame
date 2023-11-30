@@ -15,6 +15,7 @@ public class ArcherMovement : MonoBehaviour
     private Animator animator;
     [SerializeField] private float shootCooldown = 0.5f; // Adjust this value as needed
     private float lastShootTime = 0f;
+    [SerializeField] private Rigidbody2D rb;
 
 
     //Public variables  which should be modifiable at any time
@@ -25,8 +26,6 @@ public class ArcherMovement : MonoBehaviour
     public float arrowSpeed = 500;
     public AudioSource jumpSound;
     public AudioSource shootSound;
-
-    [SerializeField] private Rigidbody2D rb;
 
     void Start()
     {
@@ -44,12 +43,13 @@ public class ArcherMovement : MonoBehaviour
         Flip();
 
         //Jump
-       if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && JumpCheck.onGround == true)
         {
             Debug.Log("Jumping");
             jumpSound.Play();
             animator.SetBool("jump", true);
             rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
+            
         }
         else
         {
