@@ -13,6 +13,13 @@ public class ArcherMovement : MonoBehaviour
     private bool isFacing = true;
     private bool isJumping = false;
     private Animator animator;
+<<<<<<< HEAD
+=======
+    [SerializeField] private float shootCooldown = 0.5f; // Adjust this value as needed
+    private float lastShootTime = 0f;
+    [SerializeField] private Rigidbody2D rb;
+
+>>>>>>> 633488d045bf9d91f121c3e36cb4d3bd7a7ec741
 
     //Public variables  which should be modifiable at any time
     public float speed = 40;
@@ -22,8 +29,6 @@ public class ArcherMovement : MonoBehaviour
     public float arrowSpeed = 500;
     public AudioSource jumpSound;
     public AudioSource shootSound;
-
-    [SerializeField] private Rigidbody2D rb;
 
     void Start()
     {
@@ -41,12 +46,13 @@ public class ArcherMovement : MonoBehaviour
         Flip();
 
         //Jump
-       if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && JumpCheck.onGround == true)
         {
             Debug.Log("Jumping");
             jumpSound.Play();
             animator.SetBool("jump", true);
             rb.AddForce(new Vector2(rb.velocity.x, jumpForce));
+            
         }
         else
         {
@@ -59,7 +65,11 @@ public class ArcherMovement : MonoBehaviour
             Debug.Log("Shooting");
             shootSound.Play();
             animator.SetBool("attack", true);
+<<<<<<< HEAD
             ShootArrow();
+=======
+            lastShootTime = Time.time;
+>>>>>>> 633488d045bf9d91f121c3e36cb4d3bd7a7ec741
         }
         else 
         { 
@@ -91,6 +101,14 @@ public class ArcherMovement : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
+=======
+    //SHOOTING METHODS:
+    private void shootDelay()
+    {
+        ShootArrow();
+    }
+>>>>>>> 633488d045bf9d91f121c3e36cb4d3bd7a7ec741
     private void ShootArrow()
     {
         GameObject arrow = Instantiate(Arrow, arrowSpawn.position, arrowSpawn.rotation);
