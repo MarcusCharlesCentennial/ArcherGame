@@ -43,11 +43,5 @@ public class MobController : MonoBehaviour
         transform.position = new Vector3(transform.position.x + speed * Time.deltaTime, transform.position.y, transform.position.z);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Destroy(collision.gameObject); // Destroy the player or call a method to handle the player's defeat
-        }
-    }
+    
 }
