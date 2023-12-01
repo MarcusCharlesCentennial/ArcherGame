@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ArcherMovement : MonoBehaviour
 {
@@ -114,5 +115,13 @@ public class ArcherMovement : MonoBehaviour
         GameObject arrow = Instantiate(Arrow, arrowSpawn.position, arrowSpawn.rotation);
         Rigidbody2D arrowRb = arrow.GetComponent<Rigidbody2D>();
         arrowRb.AddForce(arrowSpawn.right * arrowSpeed * (isFacing ? 1 : -1));
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Levelexit")
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 }
