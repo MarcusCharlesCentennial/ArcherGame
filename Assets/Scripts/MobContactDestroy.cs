@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MobContactDestroy : MonoBehaviour
 {
@@ -12,6 +13,12 @@ public class MobContactDestroy : MonoBehaviour
         {
             Debug.Log("Player has been hit!"); // confirm the collision with the player is detected.
             Destroy(collision.gameObject); // Destroy the player
+            GameOver();// Calls the the GameOver method to load the game over scene.
         }
     }
+    private void GameOver()
+    {
+        SceneManager.LoadScene("GameOverScene");
+    }
 }
+
