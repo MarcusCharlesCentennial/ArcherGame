@@ -7367,37 +7367,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2649893571807332397, guid: 7896f0478b3e79941bcd2a22862ea9d2, type: 3}
   m_PrefabInstance: {fileID: 943822085}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &945533830
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 945533831}
-  m_Layer: 0
-  m_Name: Enemies
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &945533831
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 945533830}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &957638565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13924,8 +13893,8 @@ Transform:
   m_GameObject: {fileID: 1501685598}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6, y: 4.91, z: 0.018517986}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.6, y: -10.4, z: 0.018517986}
+  m_LocalScale: {x: 1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -19069,7 +19038,6 @@ SceneRoots:
   - {fileID: 1592930917}
   - {fileID: 1562894574}
   - {fileID: 285428442}
-  - {fileID: 945533831}
   - {fileID: 8382184653155760922}
   - {fileID: 1812923901}
   - {fileID: 1985646209}
