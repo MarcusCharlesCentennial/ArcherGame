@@ -5,25 +5,26 @@ using UnityEngine;
 public class DestroyEnemy : MonoBehaviour
 {
     public AudioSource hitSound;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int health = 3; // Default health, can be modified in the Inspector
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "PlayerAttack")
         {
+            // Play hit sound
             hitSound.Play();
-            Destroy(this.gameObject);
+
+            // Reduce health
+            health--;
+
+            // Destroy the arrow (or the attacking object)
+            Destroy(collision.gameObject);
+
+            // Check if health is depleted
+            if (health <= 0)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }
