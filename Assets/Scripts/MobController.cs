@@ -21,6 +21,7 @@ public class MobController : MonoBehaviour
             }
             else
             {
+                Flip();
                 movingLeft = false; // Change direction
             }
         }
@@ -33,6 +34,7 @@ public class MobController : MonoBehaviour
             }
             else
             {
+                Flip();
                 movingLeft = true; // Change direction
             }
         }
@@ -41,7 +43,19 @@ public class MobController : MonoBehaviour
     private void Move(float speed)
     {
         transform.position = new Vector3(transform.position.x + speed * Time.deltaTime, transform.position.y, transform.position.z);
+
+        // Flip the sprite based on the direction of movement
+        if ((speed < 0 && transform.localScale.x > 0) || (speed > 0 && transform.localScale.x < 0))
+        {
+            Flip();
+        }
     }
 
-    
+    private void Flip()
+    {
+        // Multiply the x component of localScale by -1
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
+    }
 }
