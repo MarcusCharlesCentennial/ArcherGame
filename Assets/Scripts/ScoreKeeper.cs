@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ScoreKeeper : MonoBehaviour
 {
-    public int totalScore;
     public TMP_Text scoreText;
-    public Collectable scoreItem;
+    [SerializeField] public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +17,13 @@ public class ScoreKeeper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (total == 56)
+        if (total >= 60)
         {
-            Application.Quit();
+            Destroy(player);
+            GameOver();
         }
     }
-    public int total;
+    public static int total;
     private void FixedUpdate()
     {
         if (Collectable.hasCollided == true) {
@@ -33,5 +34,9 @@ public class ScoreKeeper : MonoBehaviour
         {
 
         }
+    }
+    private void GameOver()
+    {
+        SceneManager.LoadScene("GameWinScene");
     }
 }

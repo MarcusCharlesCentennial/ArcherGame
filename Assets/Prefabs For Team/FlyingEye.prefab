@@ -239,4 +239,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitSound: {fileID: 0}
-  health: 2
+  health: 1

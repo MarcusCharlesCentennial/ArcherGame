@@ -517,7 +517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7678699594257008865, guid: 9fb1213a20dbbe54588ede74f8bb419d, type: 3}
       propertyPath: health
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7678699594257008865, guid: 9fb1213a20dbbe54588ede74f8bb419d, type: 3}
       propertyPath: hitSound
@@ -1531,10 +1531,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b52dc22fabe584c987eb08ed37d64f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalScore: 0
   scoreText: {fileID: 130006463}
-  scoreItem: {fileID: 0}
-  total: 0
+  player: {fileID: 1685315658}
 --- !u!1001 &132022440
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1855,6 +1853,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireBoost
       objectReference: {fileID: 0}
+    - target: {fileID: 5432934108252762133, guid: 4801344bb50b52745a0b8b7a899959e0, type: 3}
+      propertyPath: audioSound
+      value: 
+      objectReference: {fileID: 1290779292}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11338,7 +11340,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7678699594257008865, guid: 9fb1213a20dbbe54588ede74f8bb419d, type: 3}
       propertyPath: health
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7678699594257008865, guid: 9fb1213a20dbbe54588ede74f8bb419d, type: 3}
       propertyPath: hitSound
@@ -14586,7 +14588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7678699594257008865, guid: 9fb1213a20dbbe54588ede74f8bb419d, type: 3}
       propertyPath: health
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7678699594257008865, guid: 9fb1213a20dbbe54588ede74f8bb419d, type: 3}
       propertyPath: hitSound
@@ -16035,7 +16037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7678699594257008865, guid: 9fb1213a20dbbe54588ede74f8bb419d, type: 3}
       propertyPath: health
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7678699594257008865, guid: 9fb1213a20dbbe54588ede74f8bb419d, type: 3}
       propertyPath: hitSound
@@ -17642,7 +17644,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7678699594257008865, guid: 9fb1213a20dbbe54588ede74f8bb419d, type: 3}
       propertyPath: health
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7678699594257008865, guid: 9fb1213a20dbbe54588ede74f8bb419d, type: 3}
       propertyPath: hitSound
@@ -19046,7 +19048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7678699594257008865, guid: 9fb1213a20dbbe54588ede74f8bb419d, type: 3}
       propertyPath: health
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7678699594257008865, guid: 9fb1213a20dbbe54588ede74f8bb419d, type: 3}
       propertyPath: hitSound
