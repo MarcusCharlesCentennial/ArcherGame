@@ -24,6 +24,7 @@ public class DestroyEnemy : MonoBehaviour
             if (health <= 0)
             {
                 Destroy(this.gameObject);
+                hitSound.Play();
             }
         }
     }
